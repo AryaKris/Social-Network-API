@@ -16,7 +16,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // create a new thought
-    createThought(req, res) {
+    createNewThought(req, res) {
         Thought.create(req.body)
             .then((thought) => {
                 return User.findOneAndUpdate(
@@ -37,7 +37,7 @@ module.exports = {
                 res.status(500).json(err);
             });
     },
-    updateThought(req, res) {
+    updateSingleThought(req, res) {
         Video.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $set: req.body },
@@ -53,7 +53,7 @@ module.exports = {
                 res.status(500).json(err);
             });
     },
-    deleteThought(req, res) {
+    deleteSingleThought(req, res) {
         Thought.findOneAndRemove({ _id: req.params.thoughtId })
             .then((thought) =>
                 !thought
@@ -74,7 +74,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // Add a reaction
-    addReaction(req, res) {
+    addNewReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $addToSet: { reactions: req.body } },
@@ -88,7 +88,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // Remove reaction
-    removeReaction(req, res) {
+    removeNewReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $pull: { reactions: { reactionId: req.params.responseId } } },

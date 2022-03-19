@@ -25,7 +25,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // Delete a user and associated apps
-    deleteUser(req, res) {
+    deleteSingleUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
             .then((user) =>
                 !user
