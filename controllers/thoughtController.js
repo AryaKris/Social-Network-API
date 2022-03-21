@@ -6,6 +6,7 @@ module.exports = {
             .then((thoughts) => res.json(thoughts))
             .catch((err) => res.status(500).json(err));
     },
+    // Get a single thought by ID
     getSingleThought(req, res) {
         Thought.findOne({ _id: req.params.thoughtId })
             .then((thought) =>
@@ -37,8 +38,10 @@ module.exports = {
                 res.status(500).json(err);
             });
     },
+
+    // Update a current thought by ID
     updateSingleThought(req, res) {
-        Video.findOneAndUpdate(
+        Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $set: req.body },
             { runValidators: true, new: true }
@@ -53,6 +56,8 @@ module.exports = {
                 res.status(500).json(err);
             });
     },
+
+    // Dalete a current thought by ID 
     deleteSingleThought(req, res) {
         Thought.findOneAndRemove({ _id: req.params.thoughtId })
             .then((thought) =>
