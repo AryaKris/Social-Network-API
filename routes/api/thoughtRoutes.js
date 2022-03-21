@@ -20,8 +20,8 @@ router.route('/:thoughtId')
     .put(updateSingleThought)
     .delete(deleteSingleThought);
 
-// /api/thoughts/:thoughtId/reactions/:reactionId
-router.route('/:thoughtId/reactions/:reactionId')
+// /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions')
     .post(addNewReaction)
     .delete(removeNewReaction);
 
