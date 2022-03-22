@@ -25,7 +25,7 @@ This application uses the Mongoose package to connect to a MongoDB database.
  * Also, the API POST and DELETE routes succesfully creates and delete reactions and add and remove friends to a user’s friend list
 
  ## Video link - 
- /Users/mohitha/Desktop/Homework/Social-Network-API/assets/API Routes for social network.mov
+https://drive.google.com/file/d/1jtGWHV_5PhaQvCcRHT4jawBqkObCmX2z/view?usp=sharing
 
 ## License 
 
